@@ -16,15 +16,13 @@ jobs:
     - name: Setup .NET
       uses: actions/setup-dotnet@v1
       with:
-        dotnet-version: 5.0.x
+        dotnet-version:  3.1.x
     - name: Restore dependencies
-      run: dotnet restore
+      run: dotnet tool restore
     - name: Build
-      run: dotnet build --no-restore
-    - name: Test
-      run: dotnet test --no-build --verbosity normal
+      run: dotnet fake build -t bundle
     - name: Publish  
       uses: brandedoutcast/publish-nuget@v2.5.2  
       with:   
-       PROJECT_FILE_PATH: Extensions/Extensions.csproj  
+       PROJECT_FILE_PATH: Extensions/Extensions.fsproj  
        NUGET_KEY: ${{secrets.NUGET_API_KEY}} 
