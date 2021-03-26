@@ -1,7 +1,7 @@
 module Index
 
 open Elmish
-open Feliz.MultiSelect
+open Feliz.ReactSelect
 
 type Model =
     { SelectedOptions: Choice array }
@@ -13,13 +13,15 @@ type Msg =
 
 let init(): Model * Cmd<Msg> =
     let model =
-        { SelectedOptions =  Array.empty }
+        { SelectedOptions = Array.empty }
     model, Cmd.none
 
 let update (msg: Msg) (model: Model): Model * Cmd<Msg> =
     match msg with
     | SetSelectedOption fields ->
-        { SelectedOptions = fields    }, Cmd.none
+        let x = {| Value = "Bob"; Label = "Bobby" |}
+        Browser.Dom.console.log x
+        { SelectedOptions = fields }, Cmd.none
     | ClearOptions -> { SelectedOptions = Array.empty }, Cmd.none
 
 open Fable.React
@@ -64,7 +66,7 @@ let view (model : Model) (dispatch : Msg -> unit) =
                 MultiSelect.create [
                         MultiSelect.onChange (SetSelectedOption >> dispatch)
                         MultiSelect.options (SingleChoices citOptions)
-                        MultiSelect.isMulti false
+                        MultiSelect.isMulti true
                         MultiSelect.isClearable true
                         MultiSelect.isSearchable true
                         // MultiSelect.inputValue "HIHIHI"

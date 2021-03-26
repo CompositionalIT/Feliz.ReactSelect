@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
@@ -8,12 +8,11 @@
   <ItemGroup>
     <None Include="index.html" />
     <None Include="paket.references" />
-    <Compile Include="Select.fs" />
     <Compile Include="Index.fs" />
     <Compile Include="App.fs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Shared\Shared.fsproj" />
+    <ProjectReference Include="..\..\fable\Feliz.ReactSelect\Feliz.ReactSelect.fsproj" />
   </ItemGroup>
   <Import Project="..\..\.paket\Paket.Restore.targets" />
 </Project>

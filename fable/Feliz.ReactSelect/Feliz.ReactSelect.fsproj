@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+   <PropertyGroup>
+       <NpmDependencies>
+           <NpmPackage Name="react-select" Version="gt 4.2.0 lt 4.3.0" ResolutionStrategy="Max" />
+       </NpmDependencies>
+       <Authors>Compositional IT</Authors>
+       <Company>Compositional IT</Company>
+       <Description>Wrapper for react-select component</Description>
+       <Version>0.0.1-alpha</Version>
+       <PackageProjectUrl>https://github.com/CompositionalIT/MultiSelect</PackageProjectUrl>
+       <RepositoryUrl>https://github.com/CompositionalIT/MultiSelect</RepositoryUrl>
+   </PropertyGroup>
+  <ItemGroup>
+    <None Include="paket.references" />
+    <Compile Include="Feliz.ReactSelect.fs" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="..\..\.paket\Paket.Restore.targets" />
+</Project>

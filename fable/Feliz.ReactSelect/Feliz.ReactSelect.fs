@@ -1,4 +1,5 @@
-module Feliz.MultiSelect
+// Learn more about F# at http://fsharp.org
+module Feliz.ReactSelect
 
 open Fable.Core
 open Fable.Core.JsInterop
@@ -16,38 +17,6 @@ type ChoiceType =
 type DefaultChoice =
     | SingleChoice of Choice
     | MultipleChoices of Choice array
-
-// type Theme =
-//     { BorderRadius: int
-//       Colors: {}
-//       Spacing: {
-//           BaseUnit: int
-//           ControlHeight: int
-//           MenuGutter: int }
-//     }
-
-// type StyleKeys =
-//     | ClearIndicator
-//     | Container
-//     | Control
-//     | DropDownIndicator
-//     | Group
-//     | GroupHeading
-//     | IndicatorsContainer
-//     | IndicatorSeparator
-//     | Input
-//     | LoadingIndicator
-//     | LoadingMessage
-//     | Menu
-//     | MenuList
-//     | MenuPortal
-//     | MultiValue
-//     | MultiValueLabel
-//     | MultiValueRemove
-//     | NoOptionsMessage
-//     | Option
-//     | Placeholder
-//     | ValueContainer
 
 type MenuPlacement =
     | Auto
