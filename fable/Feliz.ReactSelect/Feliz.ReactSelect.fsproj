@@ -18,6 +18,9 @@
     <None Include="paket.references" />
     <Compile Include="Feliz.ReactSelect.fs" />
   </ItemGroup>
+  <ItemGroup>
+      <Content Include="*.fsproj; **\*.fs; **\*.fsi" PackagePath="fable\" />
+  </ItemGroup>
   <ItemGroup />
   <Import Project="..\..\.paket\Paket.Restore.targets" />
 </Project>
