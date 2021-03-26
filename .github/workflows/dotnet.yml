@@ -1,4 +1,4 @@
-name: .NET
+name: Nuget-Publish
 
 on:
   push:
@@ -20,9 +20,10 @@ jobs:
     - name: Restore dependencies
       run: dotnet tool restore
     - name: Build
-      run: dotnet fake build -t bundle
+      run: dotnet build --configuration Release --no-restore
     - name: Publish  
       uses: brandedoutcast/publish-nuget@v2.5.2  
       with:   
-       PROJECT_FILE_PATH: src/Client/Client.fsproj 
+       PROJECT_FILE_PATH: src/fable/Feliz.ReactSelect.fsproj 
        NUGET_KEY: ${{secrets.NUGET_API_KEY}} 
+     
