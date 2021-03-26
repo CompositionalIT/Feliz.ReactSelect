@@ -13,6 +13,7 @@
        <Version>0.0.1-alpha</Version>
        <PackageProjectUrl>https://github.com/CompositionalIT/MultiSelect</PackageProjectUrl>
        <RepositoryUrl>https://github.com/CompositionalIT/MultiSelect</RepositoryUrl>
+       <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
    </PropertyGroup>
   <ItemGroup>
     <None Include="paket.references" />
