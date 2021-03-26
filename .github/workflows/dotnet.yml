@@ -19,13 +19,13 @@ jobs:
         dotnet-version:  3.1.x
     - name: Restore dependencies
       run: dotnet tool restore
-      working-directory: ./fable/
+      working-directory: ./fable/Feliz.ReactSelect
     - name: Build
       run: dotnet build --configuration Release --no-restore
-      working-directory: ./fable/
+      working-directory: ./fable/Feliz.ReactSelect
     - name: Publish  
       uses: brandedoutcast/publish-nuget@v2.5.2  
       with:   
-       PROJECT_FILE_PATH: fable/Feliz.ReactSelect/Feliz.ReactSelect.fsproj 
+       PROJECT_FILE_PATH: Feliz.ReactSelect/Feliz.ReactSelect.fsproj 
        NUGET_KEY: ${{secrets.NUGET_API_KEY}} 
      
