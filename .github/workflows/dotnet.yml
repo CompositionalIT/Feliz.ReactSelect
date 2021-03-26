@@ -18,7 +18,7 @@ jobs:
       with:
         dotnet-version:  3.1.x
     - name: Restore dependencies
-      run: dotnet tool restore
+      run: dotnet restore
       working-directory: ./fable/Feliz.ReactSelect
     - name: Build
       run: dotnet build --configuration Release --no-restore
