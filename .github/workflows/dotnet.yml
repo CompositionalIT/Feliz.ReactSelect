@@ -26,6 +26,6 @@ jobs:
     - name: Publish  
       uses: brandedoutcast/publish-nuget@v2.5.2  
       with:   
-       PROJECT_FILE_PATH: fable/Feliz.ReactSelect.fsproj 
+       PROJECT_FILE_PATH: fable/Feliz.ReactSelect/Feliz.ReactSelect.fsproj 
        NUGET_KEY: ${{secrets.NUGET_API_KEY}} 
      
