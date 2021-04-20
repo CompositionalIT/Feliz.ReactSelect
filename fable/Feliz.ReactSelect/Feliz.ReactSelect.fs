@@ -29,7 +29,7 @@ type MenuPlacement =
             | Top -> "top"
 
 [<Erase>]
-type MultiSelect =
+type ReactSelect =
 
     static member inline autoFocus (isOn: bool) = prop.custom("autoFocus", isOn)
     static member inline isDisabled (isOn: bool) = prop.custom("isDisabled", isOn)
