@@ -2,6 +2,7 @@ module Index
 
 open Elmish
 open Feliz.ReactSelect
+open Feliz
 
 type Model =
     { SelectedOptions: Choice array }
@@ -80,6 +81,7 @@ let view (model : Model) (dispatch : Msg -> unit) =
                         // MultiSelect.defaultInputValue "Kash"
                         // MultiSelect.defaultValue (MultipleValues citOptions.[0..1])
                 ]
+                ReactSpeedometer
 
 
 

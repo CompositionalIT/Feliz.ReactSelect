@@ -11,12 +11,17 @@
     <Authors>Compositional IT</Authors>
     <Company>Compositional IT</Company>
     <Description>Wrapper for react-select component</Description>
-    <Version>0.0.2-alpha</Version>
+    <Version>0.0.3-alpha</Version>
     <PackageProjectUrl>https://github.com/CompositionalIT/MultiSelect</PackageProjectUrl>
     <RepositoryUrl>https://github.com/CompositionalIT/MultiSelect</RepositoryUrl>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageIcon>CIT-Circle.png</PackageIcon>
   </PropertyGroup>
   <ItemGroup>
+    <None Include="..\..\CIT-Circle.png">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
     <None Include="paket.references" />
     <Compile Include="Feliz.ReactSelect.fs" />
   </ItemGroup>
