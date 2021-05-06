@@ -10,11 +10,6 @@ open Farmer.Builders
 
 Target.initEnvironment ()
 
-let sharedPath = Path.getFullName "./src/Shared"
-let serverPath = Path.getFullName "./src/Server"
-let deployDir = Path.getFullName "./deploy"
-let sharedTestsPath = Path.getFullName "./tests/Shared"
-let serverTestsPath = Path.getFullName "./tests/Server"
 
 let npm args workingDir =
     let npmPath =
@@ -38,12 +33,10 @@ let dotnet cmd workingDir =
     let result = DotNet.exec (DotNet.Options.withWorkingDirectory workingDir) cmd ""
     if result.ExitCode <> 0 then failwithf "'dotnet %s' failed in %s" cmd workingDir
 
-Target.create "Clean" (fun _ -> Shell.cleanDir deployDir)
 
 Target.create "InstallClient" (fun _ -> npm "install" ".")
 
 Target.create "Bundle" (fun _ ->
-    dotnet (sprintf "publish -c Release -o \"%s\"" deployDir) serverPath
     npm "run build" "."
 )
 
@@ -63,22 +56,12 @@ Target.create "Azure" (fun _ ->
 )
 
 Target.create "Run" (fun _ ->
-    dotnet "build" sharedPath
-    [ async { dotnet "watch run" serverPath }
-      async { npm "run start" "." } ]
+    [ async { npm "run start" "." } ]
     |> Async.Parallel
     |> Async.RunSynchronously
     |> ignore
 )
 
-Target.create "RunTests" (fun _ ->
-    dotnet "build" sharedTestsPath
-    [ async { dotnet "watch run" serverTestsPath }
-      async { npm "run test:live" "." } ]
-    |> Async.Parallel
-    |> Async.RunSynchronously
-    |> ignore
-)
 
 open Fake.Core.TargetOperators
 
