@@ -64,12 +64,12 @@ let view (model : Model) (dispatch : Msg -> unit) =
 
         Hero.body [ ] [
             Container.container [ ] [
-                MultiSelect.create [
-                        MultiSelect.onChange (SetSelectedOption >> dispatch)
-                        MultiSelect.options (SingleChoices citOptions)
-                        MultiSelect.isMulti true
-                        MultiSelect.isClearable true
-                        MultiSelect.isSearchable true
+                ReactSelect.create [
+                        ReactSelect.onChange (SetSelectedOption >> dispatch)
+                        ReactSelect.options (SingleChoices citOptions)
+                        ReactSelect.isMulti true
+                        ReactSelect.isClearable true
+                        ReactSelect.isSearchable true
                         // MultiSelect.inputValue "HIHIHI"
                         // MultiSelect.tabSelectsValue true
                         // MultiSelect.autoFocus true
@@ -81,10 +81,6 @@ let view (model : Model) (dispatch : Msg -> unit) =
                         // MultiSelect.defaultInputValue "Kash"
                         // MultiSelect.defaultValue (MultipleValues citOptions.[0..1])
                 ]
-                ReactSpeedometer
-
-
-
             ]
         ]
     ]

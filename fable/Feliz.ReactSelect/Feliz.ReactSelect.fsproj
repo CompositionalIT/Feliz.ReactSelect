@@ -11,7 +11,7 @@
     <Authors>Compositional IT</Authors>
     <Company>Compositional IT</Company>
     <Description>Wrapper for react-select component</Description>
-    <Version>0.0.3-alpha</Version>
+    <Version>0.0.4</Version>
     <PackageProjectUrl>https://github.com/CompositionalIT/MultiSelect</PackageProjectUrl>
     <RepositoryUrl>https://github.com/CompositionalIT/MultiSelect</RepositoryUrl>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
