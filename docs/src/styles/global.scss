@@ -1,0 +1,22 @@
+body {
+    box-sizing: border-box;
+    margin: 0;
+    font-family: 'Nunito Sans';
+    position: relative;
+    color: #102035;
+    font-size: 15px
+}
+
+.logo-clip {
+    height: 600px;
+    position: absolute;
+    clip-path: inset(25% 0% 25% 0);
+    right: 250px;
+    opacity: 0.3
+}
+
+
+
+.center-select {
+    text-align-last: center;
+}
