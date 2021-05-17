@@ -113,7 +113,7 @@ type StyledComponents =
     static member Description (wrapperName: string) nuget npm =
         Html.div [
             StyledComponents.SubHeading wrapperName
-            Html.b "Feliz style bindings for hamburger-react"
+            Html.b $"Feliz style bindings for {wrapperName}"
             Bulma.content [
                 Html.ul [
                     Html.li [
