@@ -3,6 +3,7 @@ namespace App
 open Feliz
 open Fable.Core.JsInterop
 open Feliz.ReactSelect
+open Feliz.Bulma
 
 type CitColors =
     static member lightBlue = "#40a8b7"
@@ -45,7 +46,7 @@ type StyledComponents =
         ]
 
 
-    static member Navbar (wrapperName: string) nugetPackage reactPackage =
+    static member Navbar () =
         let logo: obj = importDefault "./cit-logo.png"
         Html.div [
             prop.style [
@@ -65,7 +66,7 @@ type StyledComponents =
                         style.display.flex
                         style.justifyContent.spaceBetween
                         style.alignItems.center
-
+                        style.padding (0, 40)
                     ]
                     prop.children [
                         StyledComponents.Row [
@@ -75,17 +76,12 @@ type StyledComponents =
                                 ]
                                 prop.src (unbox<string>logo)
                             ]
-                            Html.h2 $"{wrapperName}"
-                        ]
-                        Html.div [
-                            prop.style [ style.display.flex; style.justifyContent.spaceAround; style.alignItems.center ]
-                            prop.children [
-                                StyledComponents.NavbarLink
-                                    nugetPackage.Name
-                                    nugetPackage.Link
-                                StyledComponents.NavbarLink
-                                    reactPackage.Name
-                                    reactPackage.Link
+                            Bulma.title [
+                                prop.style [
+                                    style.color.white
+                                    style.fontSize (length.rem 1.5)
+                                ]
+                                prop.text "Compositional IT"
                             ]
                         ]
                     ]
@@ -93,18 +89,41 @@ type StyledComponents =
             ]
         ]
 
-    static member Description (wrapperName: string) =
-         Html.h2 [
-            prop.style [ style.marginBottom 70]
-            prop.text $"Feliz bindings for {wrapperName}"
-         ]
     static member SubHeading (label: string) =
-        Html.h2 [
+        Bulma.subtitle [
             prop.style [
                 style.borderBottom(2, borderStyle.solid, CitColors.darkBlue)
+                style.marginTop 30
                 style.paddingBottom 10
             ]
             prop.text label
+        ]
+
+    static member Link p =
+        Html.a [
+            prop.style [
+                style.color CitColors.darkBlue
+                style.fontWeight.bold
+                style.borderBottom (2, borderStyle.solid, CitColors.darkBlue)
+            ]
+            prop.text p.Name
+            prop.href p.Link
+        ]
+
+    static member Description (wrapperName: string) nuget npm =
+        Html.div [
+            StyledComponents.SubHeading wrapperName
+            Html.b "Feliz style bindings for hamburger-react"
+            Bulma.content [
+                Html.ul [
+                    Html.li [
+                        StyledComponents.Link nuget
+                    ]
+                    Html.li [
+                        StyledComponents.Link npm
+                    ]
+                ]
+            ]
         ]
 
     static member HeadingWithContent (title: string) (children: ReactElement) =
@@ -113,85 +132,22 @@ type StyledComponents =
             children
         ]
 
-    static member CircleButton updateProp selected =
-        Html.button [
+    static member Checkbox updateProp =
+        Bulma.input.checkbox [
             prop.style [
-                style.backgroundColor (if selected then CitColors.green else "lightgrey")
-                style.padding 10
-                style.border(1, borderStyle.none, "")
-                style.borderRadius 50
                 style.height 30
                 style.width 30
             ]
             prop.onClick updateProp
         ]
 
-    static member LabelWithCircleButton (name: string) updater selected =
+    static member LabelWithChexBox (name: string) updater =
         Html.div [
             prop.style [ style.display.flex; style.justifyContent.spaceBetween; style.alignItems.center; style.marginBottom 20 ]
             prop.children [
                 Html.b name
-                StyledComponents.CircleButton updater selected
+                StyledComponents.Checkbox updater
             ]
-        ]
-
-    static member OptionButton (buttonLabel: string) updater selected =
-        Html.button [
-            prop.style [
-                style.backgroundColor (if selected then CitColors.green else "transparent")
-                style.color (if selected then "white" else CitColors.darkBlue)
-                style.border(1,borderStyle.none, "")
-                style.borderRight(2, borderStyle.solid, CitColors.green)
-                style.padding 8
-                style.width 150
-                style.height 50
-                style.margin 0
-                style.fontWeight.bold
-            ]
-            prop.text buttonLabel
-            prop.onClick updater
-        ]
-
-    static member OptionButtons (groupingName: string) (buttonConfig: {| Name: string; Updater: Browser.Types.MouseEvent -> unit; Selected: bool |} list) =
-        Html.div [
-            prop.style [
-                style.display.flex
-                style.justifyContent.spaceBetween
-                style.alignItems.center
-                style.marginBottom 20
-                style.flexWrap.wrap ]
-            prop.children [
-                Html.b groupingName
-                Html.div [
-                    prop.style [
-                        style.border(2, borderStyle.solid, CitColors.green)
-                        style.borderRight(2, borderStyle.none, CitColors.green)
-                        style.borderRadius 5
-                    ]
-                    prop.children [
-                        for button in buttonConfig do
-                            StyledComponents.OptionButton button.Name button.Updater button.Selected
-                    ]
-                ]
-            ]
-        ]
-
-    static member  DefaultButton (buttonLabel: string) updater selected =
-        Html.button [
-            prop.style [
-                style.width (length.percent 100)
-                style.backgroundColor (if selected then CitColors.red else "transparent")
-                style.color (if selected then "white" else CitColors.darkBlue)
-                style.border(2, borderStyle.solid, CitColors.red)
-                style.borderRadius 5
-                style.padding 8
-                style.height 50
-                style.fontSize 15
-                style.marginBottom 10
-                style.fontWeight.bold
-            ]
-            prop.text buttonLabel
-            prop.onClick updater
         ]
 
     static member CodeBlock (code: string) =
@@ -199,24 +155,18 @@ type StyledComponents =
             prop.style [
                 style.padding 20
                 style.fontSize 15
-                style.backgroundColor "lightgrey"
+                style.backgroundColor "#f5f5f5"
                 style.borderRadius 5
             ]
             prop.text code
         ]
 
     static member Select (items: string list) (handler: Browser.Types.Event -> unit)=
-
-        Html.select [
+        Bulma.select [
             prop.style [
-                style.textAlign.center
                 style.width 150
-                style.border(2, borderStyle.solid, CitColors.green)
-                style.borderRadius 5
-                style.padding (0,8)
-                style.height 50
-                style.fontSize 15
-                style.fontWeight.bold
+                style.border (1, borderStyle.solid, "#767676")
+
             ]
             prop.className "center-select"
             prop.onChange handler
@@ -304,6 +254,10 @@ type Components =
                 prop.style [ style.display.flex; style.flexWrap.wrap; style.flexDirection.column ]
                 prop.children [
                     Html.div [
+                        StyledComponents.Description
+                            "Feliz.ReactSelect"
+                            { Name = "nuget"; Link = "https://www.nuget.org/packages/Feliz.ReactSelect/" }
+                            { Name = "npm"; Link = "https://www.npmjs.com/package/react-select" }
                         StyledComponents.HeadingWithContent
                             "Demo"
                             (Html.div [
@@ -326,30 +280,24 @@ type Components =
                         StyledComponents.HeadingWithContent
                             "Props"
                             (Html.div [
-                                StyledComponents.LabelWithCircleButton
+                                StyledComponents.LabelWithChexBox
                                     "Loading"
                                     (fun _ -> setProps({ props with Loading = not props.Loading}))
-                                    props.Loading
-                                StyledComponents.LabelWithCircleButton
+                                StyledComponents.LabelWithChexBox
                                     "Disabled"
                                     (fun _ -> setProps({ props with Disabled = not props.Disabled}))
-                                    props.Disabled
-                                StyledComponents.LabelWithCircleButton
+                                StyledComponents.LabelWithChexBox
                                     "Right to left"
                                     (fun _ -> setProps({ props with Rtl = not props.Rtl}))
-                                    props.Rtl
-                                StyledComponents.LabelWithCircleButton
+                                StyledComponents.LabelWithChexBox
                                     "Searchable"
                                     (fun _ -> setProps({ props with Searchable = not props.Searchable}))
-                                    props.Searchable
-                                StyledComponents.LabelWithCircleButton
+                                StyledComponents.LabelWithChexBox
                                     "Multiple"
                                     (fun _ -> setProps({ props with Multi = not props.Multi}))
-                                    props.Multi
-                                StyledComponents.LabelWithCircleButton
+                                StyledComponents.LabelWithChexBox
                                     "Show grouped option"
                                     (fun _ -> setProps({ props with Group = not props.Group}))
-                                    props.Group
                                 StyledComponents.LabelWithSelect
                                     "Menu placement"
                                     ["Top"; "Bottom"; "Auto"]
@@ -395,10 +343,7 @@ ReactSelect.create [
     [<ReactComponent>]
     static member Documentation () =
         Html.div [
-            StyledComponents.Navbar
-                "Feliz.ReactSelect"
-                { Name = "nuget"; Link = "https://www.nuget.org/packages/Feliz.ReactSelect/" }
-                { Name = "npm"; Link = "https://www.npmjs.com/package/react-select" }
+            StyledComponents.Navbar()
             Components.Demo()
         ]
 
