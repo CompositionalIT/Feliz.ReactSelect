@@ -1,4 +1,4 @@
-RESTRICTION: == net50
+RESTRICTION: == netstandard2.0
 NUGET
   remote: https://api.nuget.org/v3/index.json
     Fable.AST (3.0)
