@@ -66,7 +66,7 @@ let view (model : Model) (dispatch : Msg -> unit) =
             Container.container [ ] [
                 ReactSelect.create [
                         ReactSelect.onChange (SetSelectedOption >> dispatch)
-                        ReactSelect.options (SingleChoices citOptions)
+                        //ReactSelect.options (SingleChoices citOptions)
                         ReactSelect.isMulti true
                         ReactSelect.isClearable true
                         ReactSelect.isSearchable true
