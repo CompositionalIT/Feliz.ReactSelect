@@ -2,6 +2,6 @@
 
 Feliz style bindings for [react-select](https://react-select.com/home).
 
-A demo with some example props can be found [here](https://compositionalit.github.io/MultiSelect/).
+Check out [the demo site](https://compositionalit.github.io/MultiSelect/) for example usage from a Feliz app.
 
-For the full props list visit the docs for [react-select](https://react-select.com/props)
+The [full props list](https://react-select.com/props) is available at the react-select docs site.
