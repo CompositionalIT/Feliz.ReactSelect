@@ -4,7 +4,7 @@ Feliz style bindings for [react-select](https://react-select.com/home). The [ful
 
 ## Source code
 
-Found in `./fable/Feliz.ReactSelect/`
+Found in `./src/`
 
 ## Demo
 
@@ -14,8 +14,8 @@ You can see the demo running live at [https://compositionalit.github.io/MultiSel
 
 ## Publishing a new package
 
-- Make changes in `./fable/Feliz.ReactSelect/`
-- Change the version in `./fable/Feliz.ReactSelect/Feliz.ReactSelect.fsproj`
+- Make changes in `./src/`
+- Change the version in `./src/Feliz.ReactSelect.fsproj`
 - Push to GitHub
 - Wait for PR to be merged
 - Wait for the GitHub action (configured in `./github/workflows/publish.yml`) to finish
