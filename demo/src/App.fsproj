@@ -9,7 +9,7 @@
         <Compile Include="Main.fs" />
     </ItemGroup>
     <ItemGroup>
-        <ProjectReference Include="../../fable/Feliz.ReactSelect/Feliz.ReactSelect.fsproj" />
+        <ProjectReference Include="../../src/Feliz.ReactSelect.fsproj" />
     </ItemGroup>
     <ItemGroup>
         <PackageReference Include="Feliz" Version="1.42.0" />
