@@ -1,4 +1,6 @@
 .fable/
+*.fs.js
+*.fs.js.map
 .fake/
 .farmer/
 .idea/
