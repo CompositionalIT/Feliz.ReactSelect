@@ -16,6 +16,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Feliz.ReactSelect", "src\Feliz.ReactSelect.fsproj", "{E7F6793F-FC55-4C35-84D0-D41E8D445A18}"
 EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Demo", "demo\src\Demo.fsproj", "{807A51E5-88F8-4CFC-B9D3-EC8027BC84C2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -38,6 +40,18 @@ Global
 		{E7F6793F-FC55-4C35-84D0-D41E8D445A18}.Release|x64.Build.0 = Release|Any CPU
 		{E7F6793F-FC55-4C35-84D0-D41E8D445A18}.Release|x86.ActiveCfg = Release|Any CPU
 		{E7F6793F-FC55-4C35-84D0-D41E8D445A18}.Release|x86.Build.0 = Release|Any CPU
+		{807A51E5-88F8-4CFC-B9D3-EC8027BC84C2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{807A51E5-88F8-4CFC-B9D3-EC8027BC84C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{807A51E5-88F8-4CFC-B9D3-EC8027BC84C2}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{807A51E5-88F8-4CFC-B9D3-EC8027BC84C2}.Debug|x64.Build.0 = Debug|Any CPU
+		{807A51E5-88F8-4CFC-B9D3-EC8027BC84C2}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{807A51E5-88F8-4CFC-B9D3-EC8027BC84C2}.Debug|x86.Build.0 = Debug|Any CPU
+		{807A51E5-88F8-4CFC-B9D3-EC8027BC84C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{807A51E5-88F8-4CFC-B9D3-EC8027BC84C2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{807A51E5-88F8-4CFC-B9D3-EC8027BC84C2}.Release|x64.ActiveCfg = Release|Any CPU
+		{807A51E5-88F8-4CFC-B9D3-EC8027BC84C2}.Release|x64.Build.0 = Release|Any CPU
+		{807A51E5-88F8-4CFC-B9D3-EC8027BC84C2}.Release|x86.ActiveCfg = Release|Any CPU
+		{807A51E5-88F8-4CFC-B9D3-EC8027BC84C2}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
