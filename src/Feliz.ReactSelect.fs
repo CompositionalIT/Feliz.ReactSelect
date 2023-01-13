@@ -33,7 +33,6 @@ let lowerGroupedFieldNames opts =
 
 [<Erase>]
 type ReactSelect =
-
     static member inline autoFocus (isOn: bool) = "autoFocus" => isOn
     static member inline isDisabled (isOn: bool) = "isDisabled" => isOn
     static member inline isMulti (isOn: bool) = "isMulti" => isOn
