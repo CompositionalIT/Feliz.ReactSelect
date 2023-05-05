@@ -72,6 +72,8 @@ type ReactSelect =
 
     static member inline onChange (options: Choice array -> unit) = "onChange" => options
 
+    static member inline onChange (options: Choice option -> unit) = "onChange" => options
+
     static member inline onChange (options: GroupedChoice array -> unit) = "onChange" => options
 
     static member inline options (choices: Choice array) =
