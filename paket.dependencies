@@ -1,12 +1,10 @@
 source https://api.nuget.org/v3/index.json
 
-framework: netstandard2.0, netcoreapp3.1
+framework: net8.0
 
-nuget FSharp.Core
-nuget Fable.Core
-nuget Fable.Elmish
-nuget Fable.Elmish.Debugger
-nuget Fable.Elmish.Hmr
-nuget Fable.Elmish.React
-nuget Feliz
+nuget FSharp.Core ~> 8
+nuget Fable.Core ~> 4
+nuget Fable.Elmish ~> 4
+nuget Fable.Elmish.React ~> 4
+nuget Feliz ~> 2
 nuget Fulma
