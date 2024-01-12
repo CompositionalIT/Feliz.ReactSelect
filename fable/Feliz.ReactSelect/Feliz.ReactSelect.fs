@@ -1,4 +1,3 @@
-// Learn more about F# at http://fsharp.org
 module Feliz.ReactSelect
 
 open Fable.Core
