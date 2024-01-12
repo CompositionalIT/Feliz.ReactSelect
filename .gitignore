@@ -1,4 +1,6 @@
 .fable/
+fable_modules/
+output/
 .fake/
 .farmer/
 .idea/

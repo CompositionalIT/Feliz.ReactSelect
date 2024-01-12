@@ -1,24 +1,18 @@
 {
   "version": 1,
   "isRoot": true,
-    "tools": {
-        "paket": {
-            "version": "7.1.5",
-            "commands": [
-                "paket"
-            ]
-        },
-        "fable": {
-            "version": "3.7.20",
-            "commands": [
-                "fable"
-            ]
-        },
-        "fake-cli": {
-            "version": "5.23.1",
-            "commands": [
-                "fake"
-            ]
-        }
+  "tools": {
+    "paket": {
+      "version": "8.0.0",
+      "commands": [
+        "paket"
+      ]
+    },
+    "fable": {
+      "version": "4.9.0",
+      "commands": [
+        "fable"
+      ]
     }
+  }
 }
