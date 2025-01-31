@@ -13,6 +13,9 @@
     <RepositoryUrl>https://github.com/CompositionalIT/MultiSelect</RepositoryUrl>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageIcon>CIT-Circle.png</PackageIcon>
+    <DebugType>embedded</DebugType>
+    <EmbedUntrackedSources>true</EmbedUntrackedSources>
+    <PackageTags>fable;fable-binding;fable-javascript</PackageTags>
   </PropertyGroup>
   <ItemGroup>
     <None Include="..\..\CIT-Circle.png">
